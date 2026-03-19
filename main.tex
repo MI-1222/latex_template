@@ -1,9 +1,27 @@
-\documentclass[uplatex,a4paper,11pt]{jsarticle}
+\documentclass{cls/basic_report}
+
+% 参考文献のデータべースファイルを指定
+\addbibresource{src/example/refs.bib}
+
 \begin{document}
+
+% 目次を出力
+\tableofcontents
+
+\clearpage
 
 最小限のコンパイルテスト。
 Docker上で正常にビルドできることを確認。
 
-2行目。
+\chapter{LaTeXの機能テスト}
+
+% サブファイルとして各種機能のサンプルを読み込み
+\subfile{src/example/features}
+
+% サンプルコードを読み込み
+\input{src/example/sample}
+
+% 参考文献の一覧を出力
+\printbibliography
 
 \end{document}

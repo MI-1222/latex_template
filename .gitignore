@@ -27,6 +27,7 @@
 *.fls
 *.bcf
 *.xml
+*.synctex(busy)
 
 # Ignore node_modules
 node_modules/

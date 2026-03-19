@@ -2,6 +2,7 @@
 
 $latex = 'uplatex -synctex=1 -interaction=nonstopmode -file-line-error -halt-on-error %O %S';
 $dvipdf = 'dvipdfmx %O -o %D %S';
+$biber  = 'biber %O %B';
 $makeindex = 'makeindex %O -o %D %S';
 
 # uplatexは3,lualatexは4
