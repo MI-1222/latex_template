@@ -1,5 +1,11 @@
 \documentclass{cls/basic_report}
 
+\usepackage{styles/base}
+\usepackage{styles/pct}
+\usepackage{styles/unit_setup}
+\usepackage{styles/math_setup}
+\usepackage{styles/tikz_setup}
+
 % 参考文献のデータべースファイルを指定
 \addbibresource{src/example/refs.bib}
 
@@ -10,13 +16,16 @@
 
 \clearpage
 
-最小限のコンパイルテスト。
-Docker上で正常にビルドできることを確認。
+最小限のコンパイルテスト\p 
+Docker上で正常にビルドできることを確認\p 
 
 \chapter{LaTeXの機能テスト}
 
 % サブファイルとして各種機能のサンプルを読み込み
 \subfile{src/example/features}
+
+% スタイルファイルのデモを読み込み
+\subfile{src/example/styles_demo}
 
 % サンプルコードを読み込み
 \input{src/example/sample}

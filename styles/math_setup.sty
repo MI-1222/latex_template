@@ -1,0 +1,23 @@
+\ProvidesPackage{styles/math_setup}[2026/04/12 Custom Math Commands and Packages]
+
+% 数式用。
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{mathtools}
+\RequirePackage{bm}
+
+% 物理単位。
+\RequirePackage{siunitx}
+
+\newcommand{\detMat}{\mathop{\mathrm{det}}}
+
+\newcommand{\del}{\mathrm{d}}
+
+\newcommand{\Laplace}{\mathop{\mathcal{L}}}
+
+\newcommand{\Residue}{\mathop{\mathrm{Res}}}
+
+\newcommand{\Rea}{\mathop{\mathrm{Re}}}
+\newcommand{\Ima}{\mathop{\mathrm{Im}}}
+
+% ベクトル入力用コマンド。
+\newcommand{\bvec}[1]{\mbox{\boldmath $#1$}}

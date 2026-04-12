@@ -2,14 +2,14 @@
 
 \begin{document}
 
-本章では、LaTeXにおける基本的な環境や機能の使い方について確認します。
-レポートクラス（\code{jsreport}など）では、文書の最上位の区切りとして\code{\textbackslash chapter}を使用します。これにより、節（\code{\textbackslash section}）の番号が「章番号.節番号」のように階層化されて表示されます。
+本章では\c LaTeXにおける基本的な環境や機能の使い方について確認します\p 
+レポートクラス(\code{jsreport}など)では\c 文書の最上位の区切りとして\code{\textbackslash chapter}を使用します\p これにより\c 節(\code{\textbackslash section})の番号が「章番号.節番号」のように階層化されて表示されます\p 
 
 \section{各種コマンドと環境のテスト}
-ここでは、よく使われるコマンドや環境（リスト、図の挿入、コード引用、フレームなど）の記述例を示します。
+ここでは\c よく使われるコマンドや環境(リスト\c 図の挿入\c コード引用\c フレームなど)の記述例を示します\p 
 
-\subsection{箇条書き（リスト）環境}
-基本の箇条書き環境です。
+\subsection{箇条書き(リスト)環境}
+基本の箇条書き環境です\p 
 
 \begin{itemize}
   \item 項目1
@@ -22,7 +22,7 @@
 \end{itemize}
 
 \subsection{画像の挿入}
-\code{graphicx}パッケージを用いて画像ファイルを挿入する例です（図\ref{fig:sample}）。
+\code{graphicx}パッケージを用いて画像ファイルを挿入する例です(図\ref{fig:sample})\p 
 
 \begin{figure}[htbp]
   \centering
@@ -32,7 +32,7 @@
 \end{figure}
 
 \subsection{ソースコードの挿入}
-\code{listings}パッケージを用いたソースコードの挿入例です（コード\ref{src:python_hello}）。
+\code{listings}パッケージを用いたソースコードの挿入例です(コード\ref{src:python_hello})\p 
 
 \begin{lstlisting}[language=Python, caption=PythonのHello World, label=src:python_hello]
 def hello_world():
@@ -43,16 +43,16 @@ if __name__ == "__main__":
 \end{lstlisting}
 
 \subsection{ハイパーリンク}
-\code{hyperref}パッケージを用いたリンク挿入の例です。
-直接URLを記述する場合は \url{https://www.google.com} のように記述します。
-テキストにリンクを埋め込む場合は \href{https://www.google.com}{こちら} のように記述します。
+\code{hyperref}パッケージを用いたリンク挿入の例です\p 
+直接URLを記述する場合は \url{https://www.google.com} のように記述します\p 
+テキストにリンクを埋め込む場合は \href{https://www.google.com}{こちら} のように記述します\p 
 
-\subsection{囲み枠（フレーム）環境}
-\code{framed}パッケージを用いたフレーム環境の例です。
+\subsection{囲み枠(フレーム)環境}
+\code{framed}パッケージを用いたフレーム環境の例です\p 
 
 \begin{framed}
-これはフレーム環境の中に書かれた文章です。
-重要な文章や注意書きを強調するのに便利です。
+これはフレーム環境の中に書かれた文章です\p 
+重要な文章や注意書きを強調するのに便利です\p 
 \cite{einstein1905}
 \end{framed}
 

@@ -1,0 +1,60 @@
+\ProvidesPackage{styles/base}[2026/04/12 Custom Basic Packages]
+
+% 画像、図表挿入用。
+\RequirePackage[dvipdfmx]{graphicx}
+\RequirePackage[dvipdfmx]{color}
+\RequirePackage[dvipdfmx]{pdfpages}
+
+% 複数ファイル構成にするためのパッケージ。
+\RequirePackage{subfiles}
+
+% 強制配置用(H)。
+\RequirePackage{here}
+
+% URL・ハイパーリンク関連。
+\RequirePackage[hyphens]{url}
+\urlstyle{same}
+\RequirePackage[dvipdfmx,unicode,hidelinks,pdfusetitle]{hyperref}
+\RequirePackage{pxjahyper}
+
+% リスト拡張。
+\RequirePackage{enumerate}
+\RequirePackage{paralist}
+
+% コード挿入用(シンタックスハイライト)。
+\RequirePackage{listings}
+\lstset{
+  basicstyle={\ttfamily\small},
+  frame=single,
+  breaklines=true,
+  numbers=left,
+  numberstyle={\tiny},
+  captionpos=b
+}
+\newcommand{\code}[1]{\texttt{#1}}
+
+% 囲み枠など。
+\RequirePackage{framed}
+\RequirePackage{type1cm}
+
+% 参考文献レイアウト(biber/biblatex環境)。
+\RequirePackage[backend=biber,style=ieee]{biblatex}
+
+% % 欧文フォントと日本語フォントの調整。
+% \RequirePackage{minijs}
+% \RequirePackage[T1]{fontenc}
+% \RequirePackage{lmodern}
+
+% % その他小規模パッケージ
+% \RequirePackage{indentfirst}
+% \RequirePackage{secdot}
+% \RequirePackage{titlesec}
+
+% 図表等の名称変更。
+\renewcommand{\figurename}{\normalsize Fig.}
+\renewcommand{\tablename}{\normalsize Table.}
+
+% キャプションやサブ図の設定。
+\RequirePackage[hang,small,bf,labelsep=space]{caption}
+\captionsetup{compatibility=false}
+\RequirePackage[subrefformat=parens]{subcaption}
