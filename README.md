@@ -13,6 +13,14 @@
 
 ## install
 
+本テンプレートはDockerコンテナ内でコンパイルを行う仕組みとなっています。
+
+### 必須要件
+[Docker Desktop](https://www.docker.com/products/docker-desktop/)が起動していること。
+
+### 補足事項
+TeX Live 等のLaTeX環境一式はDockerイメージ内に構築されるため、ローカルPC環境へ TeX Live 本体をダウンロード・インストールする必要はない。
+
 ## usage
 
 ### docker image のビルド
@@ -43,3 +51,45 @@ make sub SUB=src/chapter01/intro.tex
 > `subfiles` の仕様により、サブディレクトリ内のファイルを単体ビルドする際、参考文献(BibLaTeX)の解決に失敗することがある。
 > その場合でもPDFの生成自体は行われるが、引用箇所が正しく表示されない場合がある。
 > 完全な参考文献付きのPDFを確認する場合は、`main.tex` をビルドする。
+
+## vscodeの設定例
+macOSの場合。
+
+### `~/Library/Application Support/Code/User/tasks.json`
+```json
+{
+  // ...
+  "tasks": [
+    // ...
+    {
+      "label": "Build LaTeX PDF and Clean from Docker",
+      "type": "shell",
+      "command": "make pdf && make clean",
+      "options": {
+        // 現在開いているプロジェクトのルートディレクトリで実行する
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "silent",
+        "close": true
+      },
+      "problemMatcher": []
+    },
+    // ...
+  ]
+}
+```
+
+### `~/Library/Application Support/Code/User/keybindings.json`
+```json
+[
+    // ...
+    {
+        "key": "cmd+enter",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Build LaTeX PDF and Clean from Docker",
+        "when": "editorTextFocus && editorLangId == 'latex'"
+    },
+    // ...
+]
+```
