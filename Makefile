@@ -37,10 +37,20 @@ sub:
 	fi
 	-$(DOCKER_CMD) /bin/sh -c "export BIBINPUTS=/workdir/src//: && cd $$(dirname $(SUB)) && latexmk -r /workdir/.latexmkrc $$(basename $(SUB))"
 
+.PHONY: fmt
+fmt:
+	@if [ -n "$(FILE)" ]; then \
+		$(DOCKER_CMD) latexindent -w -s -c /tmp/ -l /workdir/.latexindent.yaml "$(FILE)"; \
+	else \
+		$(DOCKER_CMD) /bin/sh -c 'find . -name "*.tex" -not -path "*/.*" -exec latexindent -w -s -c /tmp/ -l /workdir/.latexindent.yaml {} +'; \
+	fi
+
 .PHONY: clean
 clean:
 	$(LATEXMK_CMD) -c $(MAIN_SRC).tex
 	find . -type f \( \
+		-name "*.bak*" -o \
+		-name "indent.log" -o \
 		-name "*.aux" -o \
 		-name "*.glo" -o \
 		-name "*.idx" -o \

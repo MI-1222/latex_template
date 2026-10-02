@@ -12,6 +12,10 @@ RUN apt-get update && \
     texlive-bibtex-extra \
     biber \
     latexmk \
+    texlive-extra-utils \
+    libyaml-tiny-perl \
+    libfile-homedir-perl \
+    libunicode-linebreak-perl \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 

@@ -5,7 +5,7 @@
 \section{TikZデモ}
 \label{sec:tikz}
 
-多くの \code{usetikzlibrary} があらかじめ読み込まれているため\c 複雑な図もすぐに描画できます\p 以下は影付きノードや3Dグラフィックスなどのデモです\p 
+多くの \code{usetikzlibrary} があらかじめ読み込まれているため\c 複雑な図もすぐに描画できます\p 以下は影付きノードや3Dグラフィックスなどのデモです\p
 
 \subsection{影付きノードと矢印}
 \begin{figure}[H]
@@ -13,7 +13,7 @@
   \begin{tikzpicture}[>=stealth, auto, node distance=3cm]
     \node [circle, draw, drop shadow, fill=blue!10] (A) {Node A};
     \node [rectangle, draw, drop shadow, fill=red!10, right of=A] (B) {Node B};
-    
+
     \draw [->, thick] (A) edge[bend left] node {Next} (B);
     \draw [<-, thick, dashed] (A) edge[bend right] node[below] {Back} (B);
   \end{tikzpicture}
@@ -28,15 +28,15 @@
     \coordinate (A) at (0,0);
     \coordinate (B) at (4,0);
     \coordinate (C) at (1.5, 3);
-    
+
     % 三角形の描画
     \draw[thick, fill=blue!5] (A) -- (B) -- (C) -- cycle;
-    
+
     % 各頂点のラベル
     \node[below left] at (A) {A};
     \node[below right] at (B) {B};
     \node[above] at (C) {C};
-    
+
     % 角度の描画 (anglesライブラリ)
     \pic [draw, "$\alpha$", angle eccentricity=1.5] {angle = B--A--C};
     \pic [draw, "$\beta$", angle eccentricity=1.5] {angle = C--B--A};
@@ -46,7 +46,7 @@
     \coordinate (D) at ($(A)!(C)!(B)$); % CからABへの垂線の足
     \draw[dashed, red, thick] (C) -- (D);
     \node[below] at (D) {D};
-    
+
     % 直角記号
     \pic [draw, angle radius=3mm] {right angle = C--D--B};
   \end{tikzpicture}
@@ -64,14 +64,14 @@
     \node[state, fill=gray!10] (q3) [below=of q1] {$q_3$};
 
     % 遷移の描画
-    \path[->] 
-      (q0) edge node {0} (q1)
-           edge node[left] {1} (q2)
-      (q1) edge[loop above] node {0} (q1)
-           edge node {1} (q3)
-      (q2) edge node {0} (q3)
-           edge[loop below] node {1} (q2)
-      (q3) edge[loop right] node {0, 1} (q3);
+    \path[->]
+    (q0) edge node {0} (q1)
+    edge node[left] {1} (q2)
+    (q1) edge[loop above] node {0} (q1)
+    edge node {1} (q3)
+    (q2) edge node {0} (q3)
+    edge[loop below] node {1} (q2)
+    (q3) edge[loop right] node {0, 1} (q3);
   \end{tikzpicture}
   \caption{automataライブラリを用いた状態遷移図のデモ}
 \end{figure}
@@ -83,12 +83,12 @@
     % 軸の描画
     \draw[->] (-2.5, 0) -- (2.5, 0) node[right] {$x$};
     \draw[->] (0, -1.5) -- (0, 1.5) node[above] {$y$};
-    
+
     % 目盛り
     \foreach \x in {-2,-1,1,2} \draw (\x, 0.05) -- (\x, -0.05) node[below] {$\x$};
     \foreach \y in {-1,1} \draw (0.05, \y) -- (-0.05, \y) node[left] {$\y$};
     \node[below left] at (0,0) {$O$};
-    
+
     % グラフの描画
     \draw[color=red, thick, domain=-2.2:2.2, samples=100] plot (\x, {sin(\x r)}) node[right] {$\sin(x)$};
     \draw[color=blue, thick, dashed, domain=-2.3:2.3] plot (\x, {0.5*\x}) node[right] {$y = \frac{1}{2}x$};
@@ -100,22 +100,22 @@
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}[mindmap, grow cyclic, every node/.style=concept, concept color=teal!40,
-    level 1/.append style={level distance=4cm, sibling angle=90},
-    level 2/.append style={level distance=2.5cm, sibling angle=45}]
-    
+      level 1/.append style={level distance=4cm, sibling angle=90},
+      level 2/.append style={level distance=2.5cm, sibling angle=45}]
+
     \node {TikZ}
-      child[concept color=orange!40] { node {2D}
+    child[concept color=orange!40] { node {2D}
         child { node {Geometry} }
         child { node {Graphs} }
       }
-      child[concept color=blue!40] { node {3D}
+    child[concept color=blue!40] { node {3D}
         child { node {Perspective} }
       }
-      child[concept color=green!40] { node {Diagrams}
+    child[concept color=green!40] { node {Diagrams}
         child { node {Automata} }
         child { node {Trees} }
       }
-      child[concept color=purple!40] { node {Plots} };
+    child[concept color=purple!40] { node {Plots} };
   \end{tikzpicture}
   \caption{mindmapライブラリを用いたダイアグラムのデモ}
 \end{figure}
@@ -146,7 +146,7 @@
     % 枠線の描画
     \draw[thick] (P11) -- (P12) -- (P13) -- (P14) -- (P15) -- (P16) -- cycle; % 下面
     \draw[thick] (P21) -- (P22) -- (P23) -- (P24) -- (P25) -- (P26) -- cycle; % 上面
-    
+
     % 縦の結合線
     \draw[thick] (P11) -- (P21);
     \draw[thick] (P12) -- (P22);
@@ -160,8 +160,8 @@
 
     % 各頂点に原子を配置
     \foreach \pt in {P11,P12,P13,P14,P15,P16,P21,P22,P23,P24,P25,P26} {
-      \shade[ball color=blue!60] (\pt) circle (0.2);
-    }
+        \shade[ball color=blue!60] (\pt) circle (0.2);
+      }
   \end{tikzpicture}
   \caption{TikZによる3D結晶構造(六方最密構造)の描画デモ}
 \end{figure}
@@ -173,16 +173,16 @@
     % 入力
     \node (x) at (0, 1) {$x$};
     \node (y) at (0, 0) {$y$};
-    
+
     % ゲート
     \node[and gate, inputs={nn}] (and1) at (2, 0.5) {};
     \node[not gate] (not1) at (2, -0.5) {};
-    
+
     % 入力からゲートへの配線
     \draw (x.east) -- ++(0.5,0) |- (and1.input 1);
     \draw (y.east) -- ++(0.3,0) |- (and1.input 2);
     \draw (y.east) -- ++(0.3,0) |- (not1.input);
-    
+
     % 出力
     \draw (and1.output) -- ++(0.5,0) node[right] {$x \land y$};
     \draw (not1.output) -- ++(0.5,0) node[right] {$\lnot y$};
@@ -194,16 +194,16 @@
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}[
-    level 1/.style={sibling distance=3cm},
-    level 2/.style={sibling distance=1.5cm},
-    every node/.style={circle, draw, align=center, thick, fill=blue!5}
-  ]
+      level 1/.style={sibling distance=3cm},
+      level 2/.style={sibling distance=1.5cm},
+      every node/.style={circle, draw, align=center, thick, fill=blue!5}
+    ]
     \node {Root}
-      child { node {A}
+    child { node {A}
         child { node {A1} }
         child { node {A2} }
       }
-      child { node {B}
+    child { node {B}
         child { node {B1} }
         child { node {B2} }
       };
@@ -222,7 +222,7 @@
       \draw[thick, color=blue] (0,0) sin (1.5, 1) cos (3, 0);
       \node[below] at (1.5, -0.2) {Original Plot};
     \end{scope}
-    
+
     % spy（拡大先と拡大範囲の指定）
     % 座標(1.5, 1)付近を拡大し、それを座標(5, 1)に配置
     \spy[red] on (1.5, 1) in node at (5, 1);

@@ -4,50 +4,50 @@
 
 \section{スタイルファイルのデモ}
 
-今回分離した \code{.sty} ファイルが正常に動作し\c 各種コマンドが使えることを確認するためのデモです\p 
+今回分離した \code{.sty} ファイルが正常に動作し\c 各種コマンドが使えることを確認するためのデモです\p
 
 \subsection{数学スタイル (\code{math\_setup.sty})}
-\code{math\_setup.sty} で定義されている独自コマンドや数式機能をテストします\p 
-行列表式における行列式 \(\detMat A\) や\c 微小量 \(\del x\) などを用います\p 
-また\c レジュメクラスから移行してきたベクトル記法 \(\bvec{v}\) も利用可能です\p 
+\code{math\_setup.sty} で定義されている独自コマンドや数式機能をテストします\p
+行列表式における行列式 \(\detMat A\) や\c 微小量 \(\del x\) などを用います\p
+また\c レジュメクラスから移行してきたベクトル記法 \(\bvec{v}\) も利用可能です\p
 
 \begin{equation}
   \Laplace \{ f(t) \} = F(s)
 \end{equation}
 
-複素関数における留数や実部・虚部は次のように表記できます\p 
+複素関数における留数や実部・虚部は次のように表記できます\p
 \begin{equation}
   \Residue_{z=c} f(z) \qquad \Rea(z) + i \Ima(z)
 \end{equation}
 
 \subsection{単位スタイル (\code{unit\_setup.sty})}
-独自定義された物理単位用コマンドのテストです\p 以下のように簡潔に入力が可能です\p 
+独自定義された物理単位用コマンドのテストです\p 以下のように簡潔に入力が可能です\p
 \begin{itemize}
-    \item 長さ: \( 5.0 \, \Met \)
-    \item 質量: \( 10 \, \Ki\Gra \)
-    \item 力: \( 2.0 \, \New \)
-    \item 周波数: \( 60 \, \Hel \)
+  \item 長さ: \( 5.0 \, \Met \)
+  \item 質量: \( 10 \, \Ki\Gra \)
+  \item 力: \( 2.0 \, \New \)
+  \item 周波数: \( 60 \, \Hel \)
 \end{itemize}
 
-これらの裏側では \code{siunitx} パッケージも読み込まれているため\c そちらの標準的な記法も併用可能です(例: \SI{10}{\meter\per\second})\p 
-※注意：新しい \code{siunitx} では \code{\textbackslash qty} 等を推奨していますが\c 互換性のため従来記法も使用可能です\p 
+これらの裏側では \code{siunitx} パッケージも読み込まれているため\c そちらの標準的な記法も併用可能です(例: \SI{10}{\meter\per\second})\p
+※注意：新しい \code{siunitx} では \code{\textbackslash qty} 等を推奨していますが\c 互換性のため従来記法も使用可能です\p
 
 \subsection{TikZスタイル (\code{tikz\_setup.sty})}
-多くの \code{usetikzlibrary} があらかじめ読み込まれているため\c 複雑な図もすぐに描画できます\p 以下は影付きノードと矢印のデモです\p 
+多くの \code{usetikzlibrary} があらかじめ読み込まれているため\c 複雑な図もすぐに描画できます\p 以下は影付きノードと矢印のデモです\p
 
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}[>=stealth, auto, node distance=3cm]
     \node [circle, draw, drop shadow, fill=blue!10] (A) {Node A};
     \node [rectangle, draw, drop shadow, fill=red!10, right of=A] (B) {Node B};
-    
+
     \draw [->, thick] (A) edge[bend left] node {Next} (B);
     \draw [<-, thick, dashed] (A) edge[bend right] node[below] {Back} (B);
   \end{tikzpicture}
   \caption{TikZのライブラリ(shadows等)を用いたテスト描画}
 \end{figure}
 
-詳細な TikZ の使い方は \ref{sec:tikz} 章を参照してください\p 
+詳細な TikZ の使い方は \ref{sec:tikz} 章を参照してください\p
 
-以上で\c 各スタイルの独立した読み込みと利用方法のデモを終わります\p 
+以上で\c 各スタイルの独立した読み込みと利用方法のデモを終わります\p
 \end{document}

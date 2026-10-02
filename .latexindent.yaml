@@ -1,0 +1,21 @@
+# デフォルトのインデント幅設定。
+defaultIndent: '  '
+
+# バックアップファイル（.bak 等）の生成制御。
+# 名前付きバックアップファイルの作成を抑止する。
+onlyUnNamed: 1
+
+# 行の自動折り返し設定。
+modifyLineBreaks:
+  textWrapOptions:
+    columns: 0 # 自動折り返しは無効化。
+
+# itemize や enumerate 環境内での item 直後の過度なインデント(ぶら下げインデント)を無効化する。
+indentAfterItems:
+  itemize: 0
+  itemize*: 0
+  enumerate: 0
+  enumerate*: 0
+  description: 0
+  description*: 0
+  list: 0
