@@ -28,6 +28,7 @@
 *.bcf
 *.xml
 *.synctex(busy)
+*.pdf
 
 # Ignore node_modules
 node_modules/
@@ -42,3 +43,4 @@ __latexindent_temp.tex
 
 __*.tex
 *SAVE-ERROR
+indent.log
